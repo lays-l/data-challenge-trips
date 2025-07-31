@@ -19,8 +19,10 @@ This project ingests, enriches, and analyzes trip data from `trips.csv`, fulfill
   pd.read_csv(..., chunksize=100_000)
   ```  
 - **Parallel upload**: dispatch concurrent `write_pandas` calls  
-- **Synthetic benchmark**: use `notebook/generate_fake_trips.ipynb` to generate N records. Execute on google colab
-- **Results**: 
+- **Synthetic benchmark**: use `notebook/generate_fake_trips.ipynb` to generate N records. Executed on google colab
+- **Results**: Still under testing, since the ingestion results with a file containing 1 million rows were not satisfactory. There may be an issue with the use of the reverse_geocoder library, which needs further optimization.
+<img width="1319" height="282" alt="image" src="https://github.com/user-attachments/assets/fb930835-8338-4942-83d7-6ee4f9b415ee" />
+
 
 ## Cloud deployment sketch (AWS example)
 
@@ -30,11 +32,8 @@ This project ingests, enriches, and analyzes trip data from `trips.csv`, fulfill
 4. **DBT Cloud** schedules and runs transformation models  
 5. **CloudWatch** captures logs and metrics; **SNS** sends alerts on failures
 
-```
-[ S3 ] → Lambda → [ API (ECS) ] → Snowflake
-            ↘ CloudWatch + SNS
-DBT Cloud → Snowflake
-```
+Also it's possible to use **Glue Jobs** and **Glue Tables** to use as Database instead of SnowFlake. This way the API could be used only for GET services, once that Glue Job will consume directly from **S3** buckets
+
 
 ## Bonus queries
 
