@@ -1,0 +1,10 @@
+dbt-core
+dbt-snowflake
+snowflake-connector-python[pandas]
+pandas
+pyarrow
+python-dotenv
+reverse_geocoder
+fastapi
+uvicorn
+python-multipart
