@@ -131,19 +131,19 @@ The file will be enriched and the data will be automatically saved to Snowflake!
 
 ## Suggested Improvements
 ### Data Validation
-    Validate all input data before inserting it into the database to prevent corrupt or incomplete records.
+Validate all input data before inserting it into the database to prevent corrupt or incomplete records.
 
 ### Table Name Parameterization
-    Allow the target table name to be set via parameter or environment variable for more flexible pipeline management.
+Allow the target table name to be set via parameter or environment variable for more flexible pipeline management.
 
 ### Snowflake Connection as a Class
-    Refactor the Snowflake connection into a dedicated class for easier reuse and future updates.
+Refactor the Snowflake connection into a dedicated class for easier reuse and future updates.
 
 ### Separate Raw and Enriched Data
-    Store raw data in one table and enriched data in another to preserve original records and simplify processing tracking.
+Store raw data in one table and enriched data in another to preserve original records and simplify processing tracking.
 
 ### Automate Datamart Creation with DBT
-    Trigger DBT to build or update datamarts automatically after data ingestion.
+Trigger DBT to build or update datamarts automatically after data ingestion.
 
 ### API Query by City or Country
-    Add API options to allow queries by city or country, not just by coordinates bounding box.
+Add API options to allow queries by city or country, not just by coordinates bounding box.
