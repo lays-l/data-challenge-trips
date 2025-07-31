@@ -16,7 +16,7 @@ This project ingests, enriches, and analyzes trip data from `trips.csv`, fulfill
 
 - **Chunked processing**: read CSV with  
   ```python
-  pd.read_csv(..., chunksize=100_000)
+  pd.read_csv(..., chunksize=50_000)
   ```  
 - **Parallel upload**: dispatch concurrent `write_pandas` calls  
 - **Synthetic benchmark**: use `notebook/generate_fake_trips.ipynb` to generate N records. Executed on google colab
